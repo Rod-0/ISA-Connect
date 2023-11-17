@@ -1,4 +1,4 @@
-package upc.edu.pe.ISA.Connect.monitoring.DTO.request;
+package upc.edu.pe.ISA.Connect.monitoring.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

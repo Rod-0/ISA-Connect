@@ -1,13 +1,15 @@
 package upc.edu.pe.ISA.Connect.inventory.services.impl;
 
 import org.modelmapper.ModelMapper;
-import upc.edu.pe.ISA.Connect.inventory.DTO.request.ProductRequestDto;
-import upc.edu.pe.ISA.Connect.inventory.DTO.response.ProductResponseDto;
+import org.springframework.stereotype.Service;
+import upc.edu.pe.ISA.Connect.inventory.dto.request.ProductRequestDto;
+import upc.edu.pe.ISA.Connect.inventory.dto.response.ProductResponseDto;
 import upc.edu.pe.ISA.Connect.inventory.model.Products;
 import upc.edu.pe.ISA.Connect.inventory.repository.ProductsRepository;
 import upc.edu.pe.ISA.Connect.inventory.services.ProductService;
 import upc.edu.pe.ISA.Connect.shared.exception.ResourceNotFoundException;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductsRepository productsRepository;
@@ -26,8 +28,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductResponseDto getProductById(Long id){
-        Products products = productsRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found for ID: " + id));
+        // validate if product exists
+        if(!productsRepository.existsById(id))
+            throw new ResourceNotFoundException("Product not found for ID: " + id);
+
+        var products = productsRepository.findById(id);
         return modelMapper.map(products, ProductResponseDto.class);
     }
 }

@@ -1,7 +1,7 @@
 package upc.edu.pe.ISA.Connect.inventory.services;
 
-import upc.edu.pe.ISA.Connect.inventory.DTO.request.ProductRequestDto;
-import upc.edu.pe.ISA.Connect.inventory.DTO.response.ProductResponseDto;
+import upc.edu.pe.ISA.Connect.inventory.dto.request.ProductRequestDto;
+import upc.edu.pe.ISA.Connect.inventory.dto.response.ProductResponseDto;
 
 public interface ProductService {
 

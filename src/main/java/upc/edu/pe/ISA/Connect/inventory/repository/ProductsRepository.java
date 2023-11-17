@@ -5,9 +5,6 @@ import upc.edu.pe.ISA.Connect.inventory.model.Products;
 
 public interface ProductsRepository extends JpaRepository<Products, Long> {
 
-    Boolean existsByCode(String code);
-
-    Products findByCode(String code);
 
     Boolean existsBySerialNumber(String serialNumber);
 

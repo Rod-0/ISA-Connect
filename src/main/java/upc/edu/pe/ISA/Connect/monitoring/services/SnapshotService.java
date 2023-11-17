@@ -1,13 +1,15 @@
 package upc.edu.pe.ISA.Connect.monitoring.services;
 
-import upc.edu.pe.ISA.Connect.monitoring.DTO.request.SnapshotRequestDto;
-import upc.edu.pe.ISA.Connect.monitoring.DTO.response.SnapshotResponseDto;
+import upc.edu.pe.ISA.Connect.monitoring.dto.request.SnapshotRequestDto;
+import upc.edu.pe.ISA.Connect.monitoring.dto.response.SnapshotResponseDto;
+
+import java.util.List;
 
 public interface SnapshotService {
 
     //create
-    public abstract SnapshotResponseDto createSnapshot(SnapshotRequestDto snapshotRequestDto);
+    public abstract SnapshotResponseDto createSnapshot(Long productId,SnapshotRequestDto snapshotRequestDto);
 
     //read
-    public abstract SnapshotResponseDto getSnapshotByProductId(Long id);
+    public abstract List<SnapshotResponseDto> getSnapshotsByProductId(Long id);
 }

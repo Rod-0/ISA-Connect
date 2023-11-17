@@ -1,4 +1,4 @@
-package upc.edu.pe.ISA.Connect.inventory.DTO.response;
+package upc.edu.pe.ISA.Connect.inventory.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,11 +10,11 @@ import upc.edu.pe.ISA.Connect.inventory.model.EMonitoringLevel;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductResponseDto {
+public class ProductRequestDto {
 
-    private Long id;
     private String brand;
     private String model;
     private String serialNumber;
     private EMonitoringLevel monitoringLevel;
+
 }
